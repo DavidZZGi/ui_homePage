@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_admin_panel_dashboard/widget/bar_chart_permit_status.dart';
 import 'package:responsive_admin_panel_dashboard/widget/table_transaction_contract.dart';
-import 'package:responsive_admin_panel_dashboard/widget/table_widget.dart';
-
 import '../resource/app_colors.dart';
 import '../resource/app_padding.dart';
 import '../widget/charts.dart';
@@ -21,18 +19,6 @@ class PanelRightScreen extends StatefulWidget {
 }
 
 class _PanelRightScreenState extends State<PanelRightScreen> {
-  final List<Product> _products = [
-    Product(name: "LED Submersible Lights", enable: true),
-    Product(name: "Portable Projector", enable: true),
-    Product(name: "Bluetooth Speaker", enable: true),
-    Product(name: "Smart Watch", enable: true),
-    Product(name: "Temporary Tattoos", enable: true),
-    Product(name: "Bookends", enable: true),
-    Product(name: "Vegetable Chopper", enable: true),
-    Product(name: "Neck Massager", enable: true),
-    Product(name: "Facial Cleanser", enable: true),
-    Product(name: "Back Cushion", enable: true),
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

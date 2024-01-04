@@ -33,7 +33,7 @@ class VasselTable extends StatelessWidget {
               border: TableBorder.all(
                   color: Colors.grey,
                   borderRadius: const BorderRadius.all(Radius.circular(18))),
-              columnSpacing: 22,
+              columnSpacing: 15,
               columns: const [
                 DataColumn(
                     label: Text('Vessel Name',

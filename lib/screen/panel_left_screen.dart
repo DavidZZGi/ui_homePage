@@ -5,7 +5,6 @@ import 'package:responsive_admin_panel_dashboard/widget/line_chart.dart';
 
 import '../resource/app_padding.dart';
 import '../widget/pie_chart.dart';
-import '../widget/responsive_layout.dart';
 
 class Todo {
   String name;
@@ -21,33 +20,24 @@ class PanelLeftScreen extends StatefulWidget {
 }
 
 class _PanelLeftScreenState extends State<PanelLeftScreen> {
-  final List<Todo> _todos = [
-    Todo(name: "Purchase Paper", enable: true),
-    Todo(name: "Refill the inventory of speakers", enable: true),
-    Todo(name: "Hire someone", enable: true),
-    Todo(name: "Maketing Strategy", enable: true),
-    Todo(name: "Selling furniture", enable: true),
-    Todo(name: "Finish the disclosure", enable: true),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          if (ResponsiveLayout.isComputer(context))
-            Container(
-              color: AppColors.purpleLight,
-              width: 50,
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: AppColors.purpleDark,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50),
-                  ),
+          // if (ResponsiveLayout.isComputer(context))
+          Container(
+            color: AppColors.purpleLight,
+            width: 50,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: AppColors.purpleDark,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(50),
                 ),
               ),
             ),
+          ),
           SingleChildScrollView(
             child: Column(
               children: [

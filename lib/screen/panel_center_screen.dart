@@ -4,7 +4,6 @@ import 'package:responsive_admin_panel_dashboard/widget/vessel_pie_chart.dart';
 
 import '../resource/app_colors.dart';
 import '../resource/app_padding.dart';
-import '../widget/bar_chat.dart';
 
 class Person {
   String name;
@@ -20,19 +19,6 @@ class PanelCenterScreen extends StatefulWidget {
 }
 
 class _PanelCenterScreenState extends State<PanelCenterScreen> {
-  final List<Person> _persons = [
-    Person(name: "Theia Bowen", color: Color(0xfff8b250)),
-    Person(name: "Fariha Odling", color: Color(0xffff5182)),
-    Person(name: "Viola Willis", color: Color(0xff0293ee)),
-    Person(name: "Emmett Forrest", color: Color(0xfff8b250)),
-    Person(name: "Nick Jarvis", color: Color(0xff13d38e)),
-    Person(name: "ThAmit Clayeia", color: Color(0xfff8b250)),
-    Person(name: "ThAmalie Howardeia", color: Color(0xffff5182)),
-    Person(name: "Campbell Britton", color: Color(0xff0293ee)),
-    Person(name: "Haley Mellor", color: Color(0xffff5182)),
-    Person(name: "Harlen Higgins", color: Color(0xff13d38e)),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

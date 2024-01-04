@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_admin_panel_dashboard/resource/app_colors.dart';
 import 'package:responsive_admin_panel_dashboard/resource/app_padding.dart';
-import 'responsive_layout.dart';
 
 List<String> _buttonNames = ["Overview", "Revenue", "Sales", "Control"];
 int _currentSelectedButton = 0;
@@ -17,9 +16,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.purpleLight,
-      child: Row(children: [
-        if (ResponsiveLayout.isComputer(context))
+        color: AppColors.purpleLight,
+        child: Row(children: [
+          //  if (ResponsiveLayout.isComputer(context))
           Container(
             margin: const EdgeInsets.all(AppPadding.P10),
             height: double.infinity,
@@ -42,6 +41,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
               ),
             ),
           )
+        ]));
+    /*
         else
           IconButton(
             color: Colors.white,
@@ -172,5 +173,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
           ),
       ]),
     );
+  }
+  */
   }
 }
