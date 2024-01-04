@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_admin_panel_dashboard/widget/bar_chart_permit_status.dart';
+import 'package:responsive_admin_panel_dashboard/widget/table_transaction_contract.dart';
+import 'package:responsive_admin_panel_dashboard/widget/table_widget.dart';
 
 import '../resource/app_colors.dart';
 import '../resource/app_padding.dart';
@@ -46,20 +49,26 @@ class _PanelRightScreenState extends State<PanelRightScreen> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50),
               ),
-              child: Container(
+              child: const SizedBox(
                 width: double.infinity,
-                child: const ListTile(
-                  title: Text(
-                    "Net Revenue",
-                    style: TextStyle(color: Colors.white),
+                child: ListTile(
+                  title: Padding(
+                    padding: EdgeInsets.only(bottom: 8.0),
+                    child: Text(
+                      "General Stadistics",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18),
+                    ),
                   ),
                   subtitle: Text(
-                    "7% of Sales Avg.",
+                    "Total Revenue",
                     style: TextStyle(color: Colors.white),
                   ),
                   trailing: Chip(
                     label: Text(
-                      r"$46,450",
+                      r"$460,450",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -68,35 +77,37 @@ class _PanelRightScreenState extends State<PanelRightScreen> {
             ),
           ),
           const LineChartSample1(),
-          Padding(
-            padding: const EdgeInsets.only(
-                left: AppPadding.P10 / 2,
-                top: AppPadding.P10 / 2,
-                right: AppPadding.P10 / 2,
-                bottom: AppPadding.P10),
-            child: Card(
-              color: AppColors.purpleLight,
-              elevation: 3,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                  children: List.generate(
-                      _products.length,
-                      (index) => SwitchListTile.adaptive(
-                            title: Text(
-                              _products[index].name,
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                            value: _products[index].enable,
-                            onChanged: (newValue) {
-                              setState(() {
-                                _products[index].enable = newValue;
-                              });
-                            },
-                          ))),
-            ),
-          )
+          BarGraphPermitStatus(),
+          const TableTransaction(),
+          // Padding(
+          //   padding: const EdgeInsets.only(
+          //       left: AppPadding.P10 / 2,
+          //       top: AppPadding.P10 / 2,
+          //       right: AppPadding.P10 / 2,
+          //       bottom: AppPadding.P10),
+          //   child: Card(
+          //     color: AppColors.purpleLight,
+          //     elevation: 3,
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(20),
+          //     ),
+          //     child: Column(
+          //         children: List.generate(
+          //             _products.length,
+          //             (index) => SwitchListTile.adaptive(
+          //                   title: Text(
+          //                     _products[index].name,
+          //                     style: const TextStyle(color: Colors.white),
+          //                   ),
+          //                   value: _products[index].enable,
+          //                   onChanged: (newValue) {
+          //                     setState(() {
+          //                       _products[index].enable = newValue;
+          //                     });
+          //                   },
+          //                 ))),
+          //   ),
+          // )
         ]),
       ),
     );

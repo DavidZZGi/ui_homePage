@@ -34,7 +34,7 @@ class _WidgetTreeState extends State<WidgetTree> {
         child: (ResponsiveLayout.isTinyLimit(context) ||
                 ResponsiveLayout.isTinyHeightLimit(context))
             ? Container()
-            : const CustomAppBar(),
+            : const SizedBox(),
       ),
       body: ResponsiveLayout(
         tiny: Container(),
@@ -43,25 +43,24 @@ class _WidgetTreeState extends State<WidgetTree> {
             : currentIndex == 1
                 ? const PanelCenterScreen()
                 : const PanelRightScreen(),
-        tablet: Row(
-          children: const [
+        tablet: const Row(
+          children: [
             Expanded(child: PanelLeftScreen()),
             Expanded(child: PanelRightScreen())
           ],
         ),
-        largeTablet: Row(
-          children: const [
+        largeTablet: const Row(
+          children: [
             Expanded(child: PanelLeftScreen()),
             Expanded(child: PanelCenterScreen()),
             Expanded(child: PanelRightScreen())
           ],
         ),
-        computer: Row(
-          children: const [
-            Expanded(child: DrawerScreen()),
+        computer: const Row(
+          children: [
             Expanded(child: PanelLeftScreen()),
             Expanded(child: PanelCenterScreen()),
-            Expanded(child: PanelRightScreen())
+            Expanded(child: PanelRightScreen()),
           ],
         ),
       ),

@@ -2,14 +2,14 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_admin_panel_dashboard/resource/app_colors.dart';
 
-class PieChartSample2 extends StatefulWidget {
-  const PieChartSample2({super.key});
+class PieChartVassel extends StatefulWidget {
+  const PieChartVassel({super.key});
 
   @override
-  State<StatefulWidget> createState() => PieChart2State();
+  State<StatefulWidget> createState() => PieChartVasselState();
 }
 
-class PieChart2State extends State {
+class PieChartVasselState extends State {
   int touchedIndex = -1;
 
   @override
@@ -26,7 +26,7 @@ class PieChart2State extends State {
           const Padding(
             padding: EdgeInsets.only(left: 18.0, top: 18),
             child: Text(
-              'Job Completion',
+              'Vessel Types Distribution:',
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
           ),
@@ -69,16 +69,40 @@ class PieChart2State extends State {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Indicator(
-                      color: Color(0xff13d38e),
-                      text: 'Completed Jobs',
+                      color: Color.fromARGB(46, 19, 211, 141),
+                      text: 'Container Ship',
                       isSquare: true,
                     ),
                     SizedBox(
                       height: 4,
                     ),
                     Indicator(
-                      color: Color(0xffff5182),
-                      text: 'Total Jobs',
+                      color: Color.fromARGB(240, 133, 16, 49),
+                      text: 'Tanker',
+                      isSquare: true,
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Indicator(
+                      color: Color.fromARGB(255, 255, 255, 81),
+                      text: 'Cargo Vessel',
+                      isSquare: true,
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Indicator(
+                      color: Color.fromARGB(255, 48, 17, 26),
+                      text: 'Cruise Liner',
+                      isSquare: true,
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Indicator(
+                      color: Color.fromARGB(255, 60, 94, 203),
+                      text: 'Fishing Boat',
                       isSquare: true,
                     ),
                     SizedBox(
@@ -98,7 +122,7 @@ class PieChart2State extends State {
   }
 
   List<PieChartSectionData> showingSections() {
-    return List.generate(2, (i) {
+    return List.generate(5, (i) {
       final isTouched = i == touchedIndex;
       final fontSize = isTouched ? 25.0 : 14.0;
       final radius = isTouched ? 60.0 : 50.0;
@@ -106,9 +130,9 @@ class PieChart2State extends State {
       switch (i) {
         case 0:
           return PieChartSectionData(
-            color: const Color.fromARGB(255, 31, 204, 89),
-            value: 70,
-            title: '70%',
+            color: const Color.fromARGB(46, 19, 211, 141),
+            value: 20,
+            title: '20%',
             radius: radius,
             titleStyle: TextStyle(
               fontSize: fontSize,
@@ -119,9 +143,48 @@ class PieChart2State extends State {
           );
         case 1:
           return PieChartSectionData(
-            color: const Color.fromARGB(255, 245, 74, 74),
+            color: const Color.fromARGB(240, 133, 16, 49),
             value: 30,
             title: '30%',
+            radius: radius,
+            titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              shadows: shadows,
+            ),
+          );
+        case 2:
+          return PieChartSectionData(
+            color: const Color.fromARGB(255, 255, 255, 81),
+            value: 30,
+            title: '30%',
+            radius: radius,
+            titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              shadows: shadows,
+            ),
+          );
+        case 3:
+          return PieChartSectionData(
+            color: const Color.fromARGB(255, 48, 17, 26),
+            value: 10,
+            title: '10%',
+            radius: radius,
+            titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              shadows: shadows,
+            ),
+          );
+        case 4:
+          return PieChartSectionData(
+            color: const Color.fromARGB(255, 60, 94, 203),
+            value: 10,
+            title: '10%',
             radius: radius,
             titleStyle: TextStyle(
               fontSize: fontSize,

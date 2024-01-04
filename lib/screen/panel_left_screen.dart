@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_admin_panel_dashboard/resource/app_colors.dart';
+import 'package:responsive_admin_panel_dashboard/widget/bar_graph.dart';
+import 'package:responsive_admin_panel_dashboard/widget/line_chart.dart';
 
 import '../resource/app_padding.dart';
-import '../widget/charts.dart';
 import '../widget/pie_chart.dart';
 import '../widget/responsive_layout.dart';
 
@@ -61,15 +62,21 @@ class _PanelLeftScreenState extends State<PanelLeftScreen> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
                     ),
-                    child: Container(
+                    child: const SizedBox(
                       width: double.infinity,
-                      child: const ListTile(
-                        title: Text(
-                          "Products Sold",
-                          style: TextStyle(color: Colors.white),
+                      child: ListTile(
+                        title: Padding(
+                          padding: EdgeInsets.only(bottom: 8.0),
+                          child: Text(
+                            "Jobs Stadistics",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
                         ),
                         subtitle: Text(
-                          "18% of Products Sold",
+                          "Total Jobs Completed",
                           style: TextStyle(color: Colors.white),
                         ),
                         trailing: Chip(
@@ -82,35 +89,39 @@ class _PanelLeftScreenState extends State<PanelLeftScreen> {
                     ),
                   ),
                 ),
-               const LineChartSample2(),
-               const PieChartSample2(),
-                Padding(
-                    padding: const EdgeInsets.only(
-                        left: AppPadding.P10 / 2,
-                        top: AppPadding.P10 / 2,
-                        right: AppPadding.P10 / 2,
-                        bottom: AppPadding.P10),
-                    child: Card(
-                      color: AppColors.purpleLight,
-                      elevation: 3,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Column(
-                          children: List.generate(
-                              _todos.length,
-                              (index) => CheckboxListTile(
-                                  title: Text(
-                                    _todos[index].name,
-                                    style: const TextStyle(color: Colors.white),
-                                  ),
-                                  value: _todos[index].enable,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      _todos[index].enable = value ?? true;
-                                    });
-                                  }))),
-                    ))
+                LineChartCard(
+                  title: 'Transaction History',
+                ),
+                //const LineChartSample2(),
+                const PieChartSample2(),
+                BarGraphCard(),
+                // Padding(
+                //     padding: const EdgeInsets.only(
+                //         left: AppPadding.P10 / 2,
+                //         top: AppPadding.P10 / 2,
+                //         right: AppPadding.P10 / 2,
+                //         bottom: AppPadding.P10),
+                //     child: Card(
+                //       color: AppColors.purpleLight,
+                //       elevation: 3,
+                //       shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(20),
+                //       ),
+                //       child: Column(
+                //           children: List.generate(
+                //               _todos.length,
+                //               (index) => CheckboxListTile(
+                //                   title: Text(
+                //                     _todos[index].name,
+                //                     style: const TextStyle(color: Colors.white),
+                //                   ),
+                //                   value: _todos[index].enable,
+                //                   onChanged: (value) {
+                //                     setState(() {
+                //                       _todos[index].enable = value ?? true;
+                //                     });
+                //                   }))),
+                //     ))
               ],
             ),
           )
